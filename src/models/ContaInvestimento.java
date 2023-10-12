@@ -1,6 +1,6 @@
 package models;
 
-public class ContaInvestimento {
+public class ContaInvestimento extends ContaBancaria {
 	String[] investimentos;
 	
 	public void investir(float valor, int tipo) {
