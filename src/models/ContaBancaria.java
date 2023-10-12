@@ -6,6 +6,15 @@ public class ContaBancaria {
 	private float saldo;
 	private String titular;
 	private int agencia;
+	
+	public void ContaBancaria(int id, int numeroConta, float saldo, String titular, int agencia) {
+		setId(id);
+		setNumeroConta(numeroConta);
+		setSaldo(saldo);
+		setTitular(titular);
+		setAgencia(agencia);
+	}
+	
 	public int getId() {
 		return id;
 	}
