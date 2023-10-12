@@ -37,5 +37,23 @@ public class ContaBancaria {
 		this.agencia = agencia;
 	}
 	
+	public void sacar(float quantidade) {
+		this.saldo = saldo-quantidade;
+	}
 	
+	public void depositar(float quantidade) {
+		this.saldo+=quantidade;
+	}
+	
+	public String gerarExtrato() {
+		return "SEM CONEXAO";
+	}
+	
+	public void transferir(float quantidade, String destino) {
+		
+	}
+	
+	public void pagar(float quantidade, String destino) {
+		
+	}
 }
