@@ -1,6 +1,6 @@
-package models;
+package models.Contas;
 
-public class ContaBancaria {
+abstract class ContaBancaria {
 	private int id;
 	private int numeroConta;
 	private double saldo;

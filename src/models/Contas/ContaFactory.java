@@ -1,22 +1,10 @@
-package models;
-import models.ContaBancaria;
-import models.ContaCorrente;
-import models.ContaInvestimento;
-import models.ContaPoupanca;
+package models.Contas;
 
 public class ContaFactory {
     public ContaFactory() {
 
     }
-
-    public ContaBancaria criarContaBancaria(int id, int numeroConta, double saldo, String titular, int agencia) {
-        return new ContaBancaria(id, numeroConta, saldo, titular, agencia);
-    }
-
-    public ContaBancaria criarContaBancaria() {
-        return new ContaBancaria();
-    }
-
+    
     public ContaCorrente criarContaCorrente(int id, int numeroConta, double saldo, String titular, int agencia, float chequeEspecial, double TaxaManutencao) {
         return new ContaCorrente(id, numeroConta, saldo, titular, agencia, chequeEspecial, TaxaManutencao);
     }
