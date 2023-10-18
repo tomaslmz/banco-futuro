@@ -4,14 +4,14 @@ public class ContaCorrente extends ContaBancaria {
 	private double chequeEspecial;
 	private double taxaManutencao = 0.03;
 	
-	public ContaCorrente(int id, int numeroConta, float saldo, String titular, int agencia, float chequeEspecial, double TaxaManutencao) {
+	public ContaCorrente(int id, int numeroConta, double saldo, String titular, int agencia, float chequeEspecial, double TaxaManutencao) {
 		super(id, numeroConta, saldo, titular, agencia);
 		setChequeEspecial(chequeEspecial);
 		setTaxaManutencao(TaxaManutencao);
 	}
 
 	public ContaCorrente() {
-		
+
 	}
 	
 	public double getChequeEspecial() {
