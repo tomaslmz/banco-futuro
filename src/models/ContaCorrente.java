@@ -1,18 +1,20 @@
 package models;
 
 public class ContaCorrente extends ContaBancaria {
-	private float chequeEspecial;
+	private double chequeEspecial;
 	private double taxaManutencao = 0.03;
 	
-	public void ContaCorrente(int id, int numeroConta, float saldo, String titular, int agencia, float chequeEspecial, double TaxaManutencao) {
-//		fazer isso
+	public ContaCorrente(int id, int numeroConta, float saldo, String titular, int agencia, float chequeEspecial, double TaxaManutencao) {
+		super(id, numeroConta, saldo, titular, agencia);
+		setChequeEspecial(chequeEspecial);
+		setTaxaManutencao(TaxaManutencao);
 	}
 	
-	public float getChequeEspecial() {
+	public double getChequeEspecial() {
 		return chequeEspecial;
 	}
 
-	public void setChequeEspecial(float chequeEspecial) {
+	public void setChequeEspecial(double chequeEspecial) {
 		this.chequeEspecial = chequeEspecial;
 	}
 
@@ -28,7 +30,7 @@ public class ContaCorrente extends ContaBancaria {
 		
 	}
 	
-	private String emitirCheque(float valor) {
+	private String emitirCheque(double valor) {
 		return "SEM CONEXAO";
 	}
 }

@@ -3,11 +3,11 @@ package models;
 public class ContaBancaria {
 	private int id;
 	private int numeroConta;
-	private float saldo;
+	private double saldo;
 	private String titular;
 	private int agencia;
 	
-	public void ContaBancaria(int id, int numeroConta, float saldo, String titular, int agencia) {
+	public ContaBancaria(int id, int numeroConta, double saldo, String titular, int agencia) {
 		setId(id);
 		setNumeroConta(numeroConta);
 		setSaldo(saldo);
@@ -27,10 +27,10 @@ public class ContaBancaria {
 	public void setNumeroConta(int numeroConta) {
 		this.numeroConta = numeroConta;
 	}
-	public float getSaldo() {
+	public double getSaldo() {
 		return saldo;
 	}
-	public void setSaldo(float saldo) {
+	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
 	public String getTitular() {

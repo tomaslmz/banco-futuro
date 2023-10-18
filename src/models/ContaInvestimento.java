@@ -3,6 +3,10 @@ package models;
 public class ContaInvestimento extends ContaBancaria {
 	String[] investimentos;
 	
+	public ContaInvestimento(int id, int numeroConta, double saldo, String titular, int agencia) {
+		super(id, numeroConta, saldo, titular, agencia);
+	}
+
 	public void investir(float valor, int tipo) {
 		
 	}

@@ -1,13 +1,18 @@
 package models;
 
 public class ContaPoupanca extends ContaBancaria {
-	private float taxaJuros;
+	private double taxaJuros;
 	
+	public ContaPoupanca(int id, int numeroConta, double saldo, String titular, int agencia, double taxaJuros) {
+		super(id, numeroConta, saldo, titular, agencia);
+		alterarTaxaJuros(taxaJuros);
+	}
+
 	public String calcularJuros() {
 		return "SEM CONEXAO";
 	}
 	
-	public void alterarTaxaJuros(float novaTaxa) {
+	public void alterarTaxaJuros(double novaTaxa) {
 		this.taxaJuros = novaTaxa;
 	}
 }
