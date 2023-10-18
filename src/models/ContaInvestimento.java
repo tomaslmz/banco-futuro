@@ -7,6 +7,10 @@ public class ContaInvestimento extends ContaBancaria {
 		super(id, numeroConta, saldo, titular, agencia);
 	}
 
+	public ContaInvestimento() {
+		
+	}
+
 	public void investir(float valor, int tipo) {
 		
 	}

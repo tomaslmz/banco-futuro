@@ -14,6 +14,10 @@ public class ContaBancaria {
 		setTitular(titular);
 		setAgencia(agencia);
 	}
+
+	public ContaBancaria() {
+		
+	}
 	
 	public int getId() {
 		return id;

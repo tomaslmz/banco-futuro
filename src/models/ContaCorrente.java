@@ -9,6 +9,10 @@ public class ContaCorrente extends ContaBancaria {
 		setChequeEspecial(chequeEspecial);
 		setTaxaManutencao(TaxaManutencao);
 	}
+
+	public ContaCorrente() {
+		
+	}
 	
 	public double getChequeEspecial() {
 		return chequeEspecial;

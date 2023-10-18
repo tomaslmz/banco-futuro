@@ -8,6 +8,10 @@ public class ContaPoupanca extends ContaBancaria {
 		alterarTaxaJuros(taxaJuros);
 	}
 
+	public ContaPoupanca() {
+		
+	}
+
 	public String calcularJuros() {
 		return "SEM CONEXAO";
 	}
