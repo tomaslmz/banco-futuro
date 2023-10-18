@@ -1,4 +1,4 @@
-package models.Contas;
+package models;
 
 class ContaInvestimento extends ContaBancaria {
 	String[] investimentos;

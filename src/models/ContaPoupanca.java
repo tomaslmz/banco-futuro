@@ -1,4 +1,4 @@
-package models.Contas;
+package models;
 
 class ContaPoupanca extends ContaBancaria {
 	private double taxaJuros;

@@ -1,4 +1,4 @@
-package models.Contas;
+package models;
 
 class ContaCorrente extends ContaBancaria {
 	private double chequeEspecial;

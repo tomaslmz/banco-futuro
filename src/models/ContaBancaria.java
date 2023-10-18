@@ -1,4 +1,4 @@
-package models.Contas;
+package models;
 
 abstract class ContaBancaria {
 	private int id;

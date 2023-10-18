@@ -1,4 +1,4 @@
-package models.Contas;
+package models;
 
 public class ContaFactory {
     public ContaFactory() {
