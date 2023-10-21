@@ -1,7 +1,9 @@
 package models;
 
-import models.Cliente;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import models.Cliente;
 
 abstract class ContaBancaria {
 	private int id;
@@ -21,6 +23,16 @@ abstract class ContaBancaria {
 
 	public ContaBancaria() {
 		
+	}
+
+	public String getDiaAtual() {
+		Date data = new Date();
+		return new SimpleDateFormat("dd/MM/yyyy").format(data);
+	}
+
+	public String getHoraAtual() {
+		Date hora = new Date();
+		return new SimpleDateFormat("HH:mm:ss").format(hora);
 	}
 	
 	public int getId() {
