@@ -1,6 +1,6 @@
 package models;
 
-class ContaPoupanca extends ContaBancaria {
+public class ContaPoupanca extends ContaBancaria {
 	private double taxaJuros;
 	
 	public ContaPoupanca(int id, int numeroConta, double saldo, String titular, int agencia, double taxaJuros) {

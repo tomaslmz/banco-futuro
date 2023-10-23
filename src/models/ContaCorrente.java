@@ -1,6 +1,6 @@
 package models;
 
-class ContaCorrente extends ContaBancaria {
+public class ContaCorrente extends ContaBancaria {
 	private double chequeEspecial;
 	private double taxaManutencao = 0.03;
 	
