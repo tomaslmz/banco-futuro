@@ -5,7 +5,7 @@ public class ContaFactory {
 
     }
     
-    public ContaCorrente criarContaCorrente(int id, int numeroConta, double saldo, String titular, int agencia, float chequeEspecial, double TaxaManutencao) {
+    public ContaCorrente criarContaCorrente(int id, int numeroConta, double saldo, Cliente titular, int agencia, float chequeEspecial, double TaxaManutencao) {
         return new ContaCorrente(id, numeroConta, saldo, titular, agencia, chequeEspecial, TaxaManutencao);
     }
 
@@ -13,7 +13,7 @@ public class ContaFactory {
         return new ContaCorrente();
     }
 
-    public ContaPoupanca criarContaPoupanca(int id, int numeroConta, double saldo, String titular, int agencia, double taxaJuros) {
+    public ContaPoupanca criarContaPoupanca(int id, int numeroConta, double saldo, Cliente titular, int agencia, double taxaJuros) {
         return new ContaPoupanca(id, numeroConta, saldo, titular, agencia, taxaJuros);
     }
 
@@ -21,7 +21,7 @@ public class ContaFactory {
         return new ContaPoupanca();
     }
 
-    public ContaInvestimento criarContaInvestimento(int id, int numeroConta, double saldo, String titular, int agencia) {
+    public ContaInvestimento criarContaInvestimento(int id, int numeroConta, double saldo, Cliente titular, int agencia) {
         return new ContaInvestimento(id, numeroConta, saldo, titular, agencia);
     }
 
