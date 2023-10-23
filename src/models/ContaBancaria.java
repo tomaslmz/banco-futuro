@@ -3,7 +3,6 @@ package models;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import models.Cliente;
 
 abstract class ContaBancaria {
 	private int id;
