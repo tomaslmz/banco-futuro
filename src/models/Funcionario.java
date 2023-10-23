@@ -1,12 +1,10 @@
 package models;
 
-import java.util.Date;
-
 public class Funcionario extends Pessoa {
     private double salario;
     private String cargo;
 
-    public Funcionario(int id, String nome, String email, Cpf cpf, Endereco endereco, String telefone, Date dataNascimento, double salario, String cargo) {
+    public Funcionario(int id, String nome, Email email, Cpf cpf, Endereco endereco, Telefone telefone, String dataNascimento, double salario, String cargo) {
         super(id, nome, email, cpf, endereco, telefone, dataNascimento);
         setSalario(salario);
         setCargo(cargo);
