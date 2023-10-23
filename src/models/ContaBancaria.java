@@ -25,7 +25,55 @@ abstract class ContaBancaria {
 		
 	}
 
-	public String getDiaAtual() {
+	public void addExtrato(String tipo, double quantidade, String destino) {		
+		try {
+			if(tipo.isEmpty()) {
+				throw new Exception("O tipo não pode estar vazio!");
+			}
+
+			if(tipo != "SAQUE" && tipo != "PAGAMENTO" && tipo != "TRANSFERÊNCIA" && tipo != "DEPÓSITO") {
+				throw new Exception("Tipo inválido!");
+			}
+
+			if(0 > quantidade) {
+				throw new Exception("Quantidade inválida!");
+			}
+
+			if(destino.isEmpty()) {
+				throw new Exception("Destino inválido!");
+			}
+
+			String extrato = "Tipo: " + tipo + "\nQuantidade R$" + quantidade + "\nDestino: " + destino + "\nData: " + getDataAtual() + " " + getHoraAtual();
+			
+			this.extrato.add(extrato);
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public void addExtrato(String tipo, double quantidade) {		
+		try {
+			if(tipo.isEmpty()) {
+				throw new Exception("O tipo não pode estar vazio!");
+			}
+
+			if(tipo != "SAQUE" && tipo != "PAGAMENTO" && tipo != "TRANSFERÊNCIA" && tipo != "DEPÓSITO") {
+				throw new Exception("Tipo inválido!");
+			}
+
+			if(0 > quantidade) {
+				throw new Exception("Quantidade inválida!");
+			}
+
+			String extrato = "Tipo: " + tipo + "\nQuantidade R$" + quantidade + "\nData: " + getDataAtual() + " " + getHoraAtual();
+			
+			this.extrato.add(extrato);
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public String getDataAtual() {
 		Date data = new Date();
 		return new SimpleDateFormat("dd/MM/yyyy").format(data);
 	}
@@ -56,12 +104,6 @@ abstract class ContaBancaria {
 	}
 
 	public void setNumeroConta(int numeroConta) {
-		if(numeroConta >= 0) {
-			this.numeroConta = numeroConta;
-		} else {
-			System.out.println("Número da conta inválido!");
-		}
-
 		try {
 			if(0 > numeroConta) {
 				throw new Exception("Número da conta inválido!");
@@ -119,6 +161,7 @@ abstract class ContaBancaria {
 			this.saldo = saldo-quantidade;
 			
 			System.out.println("Saque de R$" + quantidade + " realizado com sucesso");
+			addExtrato("SAQUE", quantidade);
 		} catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -133,6 +176,7 @@ abstract class ContaBancaria {
 			this.saldo += quantidade;
 
 			System.out.println("Depósito de R$" + quantidade + " realizado com sucesso");
+			addExtrato("DEPÓSITO", quantidade);
 		} catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -158,6 +202,7 @@ abstract class ContaBancaria {
 			
 			System.out.println("Transferência de R$" + quantidade + " para " + destino);
 			this.saldo -= quantidade;
+			addExtrato("TRANSFERÊNCIA", quantidade, destino);
 		} catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -179,6 +224,7 @@ abstract class ContaBancaria {
 			
 			System.out.println("Pagamento de R$" + quantidade + " para " + destino);
 			this.saldo -= quantidade;
+			addExtrato("PAGAMENTO", quantidade, destino);
 		} catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
