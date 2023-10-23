@@ -11,10 +11,14 @@ public class Cpf {
     }
 
     public void setCpf(String cpf) {
-        if(validarCpf(cpf)) {
+        try {
+            if(!validarCpf(cpf)) {
+                throw new Exception("O CPF deve ser válido!");
+            }
+
             this.cpf = cpf;
-        } else {
-            System.out.println("CPF inválido!");
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
         }
     }
 
