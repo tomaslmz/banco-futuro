@@ -15,7 +15,13 @@ public class Funcionario extends Pessoa {
     }
 
     public void setSalario(double salario) {
-        this.salario = salario;
+        try {
+            if(0 > salario) {
+                throw new Exception("Insira um salário válido!");
+            }
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public String getCargo() {
@@ -23,7 +29,13 @@ public class Funcionario extends Pessoa {
     }
 
     public void setCargo(String cargo) {
-        this.cargo = cargo;
+        try {
+            if(cargo.isEmpty() || 4 > cargo.length()) {
+                throw new Exception("Insira um cargo válido!");
+            }
+        } catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }
