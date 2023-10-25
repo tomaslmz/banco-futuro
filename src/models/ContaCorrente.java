@@ -1,25 +1,37 @@
 package models;
 
 public class ContaCorrente extends ContaBancaria {
-	private double chequeEspecial;
 	private double taxaManutencao = 0.03;
 	
-	public ContaCorrente(int id, int numeroConta, double saldo, Cliente titular, int agencia, float chequeEspecial, double TaxaManutencao) {
+	public ContaCorrente(int id, int numeroConta, double saldo, Cliente titular, int agencia, float chequeEspecial) {
 		super(id, numeroConta, saldo, titular, agencia);
-		setChequeEspecial(chequeEspecial);
-		setTaxaManutencao(TaxaManutencao);
 	}
 
 	public ContaCorrente() {
 
 	}
-	
-	public double getChequeEspecial() {
-		return chequeEspecial;
-	}
 
-	public void setChequeEspecial(double chequeEspecial) {
-		this.chequeEspecial = chequeEspecial;
+	@Override
+	public void transferir(float quantidade, String destino) {
+		try {
+			if(0 >= quantidade) {
+				throw new Exception("Quantidade de transferência inválida!");
+			}
+
+			if(destino.isEmpty()) {
+				throw new Exception("Destino de transferência inválida!");
+			}
+
+			if(quantidade > getSaldo()) {
+				throw new Exception("Saldo insuficiente!");
+			}
+			
+			System.out.println("Transferência de R$" + quantidade + " para " + destino);
+			setSaldo(getSaldo() - (quantidade + quantidade*taxaManutencao));
+			addExtrato("TRANSFERÊNCIA", quantidade, destino, quantidade*taxaManutencao);
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public double getTaxaManutencao() {
@@ -28,13 +40,5 @@ public class ContaCorrente extends ContaBancaria {
 
 	public void setTaxaManutencao(double taxaManutencao) {
 		this.taxaManutencao = taxaManutencao;
-	}
-
-	private void aplicarTaxaManutencao() {
-		
-	}
-	
-	private String emitirCheque(double valor) {
-		return "SEM CONEXAO";
 	}
 }
