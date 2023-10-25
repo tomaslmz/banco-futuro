@@ -5,8 +5,8 @@ public class ContaFactory {
 
     }
     
-    public ContaCorrente criarContaCorrente(int id, int numeroConta, double saldo, Cliente titular, int agencia, float chequeEspecial, double TaxaManutencao) {
-        return new ContaCorrente(id, numeroConta, saldo, titular, agencia, chequeEspecial, TaxaManutencao);
+    public ContaCorrente criarContaCorrente(int id, int numeroConta, double saldo, Cliente titular, int agencia, float chequeEspecial) {
+        return new ContaCorrente(id, numeroConta, saldo, titular, agencia, chequeEspecial);
     }
 
     public ContaCorrente criarContaCorrente() {

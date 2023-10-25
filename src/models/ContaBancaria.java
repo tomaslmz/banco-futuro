@@ -50,6 +50,62 @@ abstract class ContaBancaria {
 		}
 	}
 
+	public void addExtrato(String tipo, double quantidade, String destino, double taxa) {		
+		try {
+			if(tipo.isEmpty()) {
+				throw new Exception("O tipo não pode estar vazio!");
+			}
+
+			if(tipo != "SAQUE" && tipo != "PAGAMENTO" && tipo != "TRANSFERÊNCIA" && tipo != "DEPÓSITO") {
+				throw new Exception("Tipo inválido!");
+			}
+
+			if(0 > quantidade) {
+				throw new Exception("Quantidade inválida!");
+			}
+
+			if(0 >= taxa) {
+				throw new Exception("Taxa inválida!");
+			}
+
+			if(destino.isEmpty()) {
+				throw new Exception("Destino inválido!");
+			}
+
+			String extrato = "Tipo: " + tipo + "\nQuantidade R$" + quantidade + "\nTaxa: " + taxa + "\nDestino:" + destino + "\nData: " + getDataAtual() + " " + getHoraAtual();
+			
+			this.extrato.add(extrato);
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public void addExtrato(String tipo, double quantidade, double taxa) {		
+		try {
+			if(tipo.isEmpty()) {
+				throw new Exception("O tipo não pode estar vazio!");
+			}
+
+			if(tipo != "SAQUE" && tipo != "PAGAMENTO" && tipo != "TRANSFERÊNCIA" && tipo != "DEPÓSITO") {
+				throw new Exception("Tipo inválido!");
+			}
+
+			if(0 > quantidade) {
+				throw new Exception("Quantidade inválida!");
+			}
+
+			if(0 >= taxa) {
+				throw new Exception("Taxa inválida!");
+			}
+
+			String extrato = "Tipo: " + tipo + "\nQuantidade R$" + quantidade + "\nTaxa: " + taxa + "\nData: " + getDataAtual() + " " + getHoraAtual();
+			
+			this.extrato.add(extrato);
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
 	public void addExtrato(String tipo, double quantidade) {		
 		try {
 			if(tipo.isEmpty()) {
@@ -207,7 +263,7 @@ abstract class ContaBancaria {
 		}
 	}
 	
-	public void pagar(float quantidade, String destino) {
+	public void pagar(double quantidade, String destino) {
 		try {
 			if(0 >= quantidade) {
 				throw new Exception("Quantidade de pagamento inválida!");
