@@ -13,8 +13,8 @@ public class ContaFactory {
         return new ContaCorrente();
     }
 
-    public ContaPoupanca criarContaPoupanca(int id, int numeroConta, double saldo, Cliente titular, int agencia, double taxaJuros) {
-        return new ContaPoupanca(id, numeroConta, saldo, titular, agencia, taxaJuros);
+    public ContaPoupanca criarContaPoupanca(int id, int numeroConta, double saldo, Cliente titular, int agencia) {
+        return new ContaPoupanca(id, numeroConta, saldo, titular, agencia);
     }
 
     public ContaPoupanca criarContaPoupanca() {
