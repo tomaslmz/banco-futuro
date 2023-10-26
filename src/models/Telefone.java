@@ -3,7 +3,7 @@ package models;
 import java.util.regex.Pattern;
 
 public class Telefone {
-    String telefone;
+    private String telefone;
 
     public Telefone(String telefone) {
         setTelefone(telefone);

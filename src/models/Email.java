@@ -3,7 +3,7 @@ package models;
 import java.util.regex.Pattern;
 
 public class Email {
-    String email;
+    private String email;
 
     public Email(String email) {
         setEmail(email);
